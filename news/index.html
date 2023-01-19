@@ -95,6 +95,7 @@ if ('serviceWorker' in navigator) {
 <script> 
 var date = new Date();
 var month = date.getMonth();
+var year = date.getFullYear();
 var arr = [
   "JANUARY",
   "FEBRUARY",
@@ -115,7 +116,7 @@ numberp = (arr[month+1]);
 	$.ajax({
 			 		async: true,
 			 		crossDomain: true,
-					url: 'https://kinopoiskapiunofficial.tech/api/v2.1/films/releases?year=2022&month='+numberm,
+					url: 'https://kinopoiskapiunofficial.tech/api/v2.1/films/releases?year='+year+'&month='+numberm,
 					type: 'GET',
 			 		headers: {'X-API-KEY':'1c547473-0385-454b-a351-8c41f27ea5fd'},
 					success: function(response){
@@ -131,7 +132,7 @@ numberp = (arr[month+1]);
 	$.ajax({
 			 		async: true,
 			 		crossDomain: true,
-					url: 'https://kinopoiskapiunofficial.tech/api/v2.1/films/releases?year=2022&month='+number,
+					url: 'https://kinopoiskapiunofficial.tech/api/v2.1/films/releases?year='+year+'&month='+number,
 					type: 'GET',
 			 		headers: {'X-API-KEY':'1c547473-0385-454b-a351-8c41f27ea5fd'},
 					success: function(response){
@@ -147,7 +148,7 @@ numberp = (arr[month+1]);
 	$.ajax({
 			 		async: true,
 			 		crossDomain: true,
-					url: 'https://kinopoiskapiunofficial.tech/api/v2.1/films/releases?year=2022&month='+numberp,
+					url: 'https://kinopoiskapiunofficial.tech/api/v2.1/films/releases?year='+year+'&month='+numberp,
 					type: 'GET',
 			 		headers: {'X-API-KEY':'1c547473-0385-454b-a351-8c41f27ea5fd'},
 					success: function(response){
