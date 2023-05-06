@@ -98,7 +98,7 @@
 <body>
 		<div id="navbar" class="">
         <div id="navInner">
-            <span id="navbarName" onclick="location.href='/genres';">🔍Главная🔎</span>
+            <span id="navbarName" onclick="location.href='/apps/2';">🔍Главная🔎</span>
         </div>
     </div>
   <div class="container">
@@ -111,12 +111,6 @@
     <div class="backgroundMountain" id="blurredMountain"></div>
     <div class="mainContent">
 </br> 
-        <input type="submit" style="background: var(--bg-color); font-size: 5pt; color: var(--light-text-color);border-radius: 11px; border-left: 0.5px var(--light-text-color) solid; border-right: 0.5px var(--light-text-color) solid; border-top: 0.5px var(--light-text-color) solid; border-bottom: 0.5px var(--light-text-color) solid;cursor: pointer;width: 13%; height: 25px;" onclick="location.href='/news/';" value="Ожидаемые">
-&nbsp; &nbsp; &nbsp; <input type="submit" style="background: var(--bg-color); font-size: 5pt; color: var(--light-text-color);border-radius: 11px; border-left: 0.5px var(--light-text-color) solid; border-right: 0.5px var(--light-text-color) solid; border-top: 0.5px var(--light-text-color) solid; border-bottom: 0.5px var(--light-text-color) solid;cursor: pointer;width: 13%; height: 25px;" onclick="location.href='/popular/';" value="Популярные">
-&nbsp; &nbsp; &nbsp; <input type="submit" style="background: var(--bg-color); font-size: 5pt; color: var(--light-text-color);border-radius: 11px; border-left: 0.5px var(--light-text-color) solid; border-right: 0.5px var(--light-text-color) solid; border-top: 0.5px var(--light-text-color) solid; border-bottom: 0.5px var(--light-text-color) solid;cursor: pointer;width: 13%; height: 25px;" onclick="location.href='/favorites';" value="Избранное">
-&nbsp; &nbsp; &nbsp; <input type="submit" style="background: var(--bg-color); font-size: 5pt; color: var(--light-text-color);border-radius: 11px; border-left: 0.5px var(--light-text-color) solid; border-right: 0.5px var(--light-text-color) solid; border-top: 0.5px var(--light-text-color) solid; border-bottom: 0.5px var(--light-text-color) solid;cursor: pointer;width: 13%; height: 25px;" onclick="location.href='/top250/';" value="Лучшие">
-&nbsp; &nbsp; &nbsp; <input type="submit" style="background: var(--bg-color); font-size: 5pt; color: var(--light-text-color);border-radius: 11px; border-left: 0.5px var(--light-text-color) solid; border-right: 0.5px var(--light-text-color) solid; border-top: 0.5px var(--light-text-color) solid; border-bottom: 0.5px var(--light-text-color) solid;cursor: pointer;width: 13%; height: 25px;" onclick="location.href='/premiere/';" value="Премьеры">
-
 	<div class="player1" style="text-align: center; position: relative; justify-content: center; align-items: center">
 		<input type="search" id="text" style="width: 70%; background: var(--bg-color); border: none; font-size: 8pt; color: var(--light-text-color); -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px;border-left: 0.5px var(--light-text-color) solid; border-right: 0.5px var(--light-text-color) solid; border-top: 0.5px var(--light-text-color) solid; border-bottom: 0.5px var(--light-text-color) solid; height: 25px; margin: 5px; padding-left: 10px;" placeholder="Введите название фильма или сериала и нажмите Enter или кнопку Искать"> 
 		<input type="submit" style="background: var(--bg-color); font-size: 10pt; color: var(--light-text-color);border-radius: 15px; border-left: 0.5px var(--light-text-color) solid; border-right: 0.5px var(--light-text-color) solid; border-top: 0.5px var(--light-text-color) solid; border-bottom: 0.5px var(--light-text-color) solid;cursor: pointer;width: 25%; height: 25px;" onclick="search();" value="Искать">
@@ -154,7 +148,7 @@
 			 				var index, len;
 			 				for (index = 0, len = a.length; index < len; ++index) {
 				 				var item = a[index];
-					 				 $('.items').append('<li class="item" style="margin-bottom: 1rem">    <a class="link" href="/kino/?id='+item.filmId+'&title='+item.nameRu+' ('+item.year+')" title="'+item.nameRu+' ('+item.year+')">        <div class="cover-wrap">          <div class="cover js-b-lazy fadeIn animated" style="background-image: url('+item.posterUrlPreview+');"></div></div>     <div class="description">     <h3 class="title">'+item.nameRu+'</h3>      <span class="desc">     <span class="rating">'+item.rating+'</span>    <span class="year">'+item.year+'</span></span></div></a></li>');
+					 				 $('.items').append('<li class="item" style="margin-bottom: 1rem">    <a class="link" href="/kino/tgbot?id='+item.filmId+'&title='+item.nameRu+' ('+item.year+')" title="'+item.nameRu+' ('+item.year+')">        <div class="cover-wrap">          <div class="cover js-b-lazy fadeIn animated" style="background-image: url('+item.posterUrlPreview+');"></div></div>     <div class="description">     <h3 class="title">'+item.nameRu+'</h3>      <span class="desc">     <span class="rating">'+item.rating+'</span>    <span class="year">'+item.year+'</span></span></div></a></li>');
 							}
 					}
 	});
@@ -172,7 +166,7 @@
 			 				var index, len;
 			 				for (index = 0, len = a.length; index < len; ++index) {
 				 				var item = a[index];
-					 				 $('.items').append('<li class="item" style="margin-bottom: 1rem">    <a class="link" href="/kino/?id='+item.filmId+'&title='+item.nameRu+' ('+item.year+')" title="'+item.nameRu+' ('+item.year+')">        <div class="cover-wrap">          <div class="cover js-b-lazy fadeIn animated" style="background-image: url('+item.posterUrlPreview+');"></div></div>     <div class="description">     <h3 class="title">'+item.nameRu+'</h3>      <span class="desc">     <span class="rating">'+item.rating+'</span>    <span class="year">'+item.year+'</span></span></div></a></li>');
+					 				 $('.items').append('<li class="item" style="margin-bottom: 1rem">    <a class="link" href="/kino/tgbot?id='+item.filmId+'&title='+item.nameRu+' ('+item.year+')" title="'+item.nameRu+' ('+item.year+')">        <div class="cover-wrap">          <div class="cover js-b-lazy fadeIn animated" style="background-image: url('+item.posterUrlPreview+');"></div></div>     <div class="description">     <h3 class="title">'+item.nameRu+'</h3>      <span class="desc">     <span class="rating">'+item.rating+'</span>    <span class="year">'+item.year+'</span></span></div></a></li>');
 							}
 					}
 	});
@@ -188,7 +182,7 @@
 			 				var index, len;
 			 				for (index = 0, len = a.length; index < len; ++index) {
 				 				var item = a[index];
-					 				 $('.items').append('<li class="item" style="margin-bottom: 1rem">    <a class="link" href="/kino/?id='+item.filmId+'&title='+item.nameRu+' ('+item.year+')" title="'+item.nameRu+' ('+item.year+')">        <div class="cover-wrap">          <div class="cover js-b-lazy fadeIn animated" style="background-image: url('+item.posterUrlPreview+');"></div></div>     <div class="description">     <h3 class="title">'+item.nameRu+'</h3>      <span class="desc">     <span class="rating">'+item.rating+'</span>    <span class="year">'+item.year+'</span></span></div></a></li>');
+					 				 $('.items').append('<li class="item" style="margin-bottom: 1rem">    <a class="link" href="/kino/tgbot?id='+item.filmId+'&title='+item.nameRu+' ('+item.year+')" title="'+item.nameRu+' ('+item.year+')">        <div class="cover-wrap">          <div class="cover js-b-lazy fadeIn animated" style="background-image: url('+item.posterUrlPreview+');"></div></div>     <div class="description">     <h3 class="title">'+item.nameRu+'</h3>      <span class="desc">     <span class="rating">'+item.rating+'</span>    <span class="year">'+item.year+'</span></span></div></a></li>');
 							}
 					}
 	});
@@ -210,7 +204,7 @@ function search(){
 			 				var index, len;
 			 				for (index = 0, len = a.length; index < len; ++index) {
 				 				var item = a[index];
-					 				 $('.items').append('<li class="item" style="margin-bottom: 1rem">    <a class="link" href="/kino/?id='+item.filmId+'&title='+item.nameRu+' ('+item.year+')" title="'+item.nameRu+' ('+item.year+')">        <div class="cover-wrap">          <div class="cover js-b-lazy fadeIn animated" style="background-image: url('+item.posterUrlPreview+');"></div></div>     <div class="description">     <h3 class="title">'+item.nameRu+'</h3>      <span class="desc">     <span class="rating">'+item.rating+'</span>    <span class="year">'+item.year+'</span></span></div></a></li>');
+					 				 $('.items').append('<li class="item" style="margin-bottom: 1rem">    <a class="link" href="/kino/tgbot?id='+item.filmId+'&title='+item.nameRu+' ('+item.year+')" title="'+item.nameRu+' ('+item.year+')">        <div class="cover-wrap">          <div class="cover js-b-lazy fadeIn animated" style="background-image: url('+item.posterUrlPreview+');"></div></div>     <div class="description">     <h3 class="title">'+item.nameRu+'</h3>      <span class="desc">     <span class="rating">'+item.rating+'</span>    <span class="year">'+item.year+'</span></span></div></a></li>');
 							}
 					}
 	});
