@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+var checkpass = window.location.hash.slice(1);
+    var checkid = window.location.search.substr(1);
+        if (checkpass == "") {
+			const pass = JSON.parse(localStorage.getItem('pass'))
+                        if (pass != "Greatings") {
+                            while (0==0) {
+                                alert("Отказано в доступе")
+                            }
+                        }
+        } else {
+	        var checkpass = window.location.hash.slice(1);
+            localStorage.removeItem('pass');
+            localStorage.setItem('pass', JSON.stringify(checkid));
+            var checkid = window.location.search.substr(1);
+            localStorage.removeItem('tguserid');
+            localStorage.setItem('tguserid', JSON.stringify(checkpass));
+        };
+			setTimeout(function(){
+                                newurl = window.location.origin + '/apps/';
+				window.location.replace(newurl);
+			},999)
+			var get = function(){
+				var checkpass = window.location.hash.slice(1);
+                localStorage.removeItem('pass');
+                localStorage.setItem('pass', JSON.stringify(checkid));
+                var checkid = window.location.search.substr(1);
+                localStorage.removeItem('tguserid');
+                localStorage.setItem('tguserid', JSON.stringify(checkpass));
+			setTimeout(function(){
+				window.location.replace('https://ipasigns.cf/apps');
+			},1111)
+            }
+			</script>
+
+</body>
+</html>
