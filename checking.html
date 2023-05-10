@@ -35,7 +35,8 @@ var checkpass = window.location.hash.slice(1);
                 localStorage.removeItem('tguserid');
                 localStorage.setItem('tguserid', JSON.stringify(checkpass));
 			setTimeout(function(){
-				window.location.replace('https://ipasigns.cf/apps');
+				newurl = window.location.origin + '/apps/';
+				window.location.replace(newurl);
 			},1111)
             }
 			</script>
