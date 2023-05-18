@@ -406,16 +406,7 @@
         close() {
             Telegram.WebApp.close();
         },
-        toggleMainButton(el) {
-            const mainButton = Telegram.WebApp.MainButton;
-            if (mainButton.isVisible) {
-                mainButton.hide();
-                el.innerHTML = 'Show Main Button';
-            } else {
-                mainButton.show();
-                el.innerHTML = 'Hide Main Button';
-            }
-        },
+        
 
         // actions
         sendMessage(msg_id, with_webview) {
@@ -515,28 +506,7 @@
                 });
             }
         },
-        sendText(spam) {
-            const textField = document.querySelector('#text_field');
-            const text = textField.value;
-            if (!text.length) {
-                return textField.focus();
-            }
-            if (byteLength(text) > 4096) {
-                return alert('Text is too long');
-            }
-
-            const repeat = spam ? 10 : 1;
-            for (let i = 0; i < repeat; i++) {
-                Telegram.WebApp.sendData(text);
-            }
-        },
-        sendTime(spam) {
-            const repeat = spam ? 10 : 1;
-            for (let i = 0; i < repeat; i++) {
-                Telegram.WebApp.sendData(new Date().toString());
-            }
-        },
-
+        
         // Alerts
         showAlert(message) {
             Telegram.WebApp.showAlert(message);
