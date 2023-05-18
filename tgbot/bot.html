@@ -343,44 +343,7 @@
         
 
         // actions
-        changeMenuButton(close) {
-            document.querySelectorAll('button').forEach((btn) => btn.disabled = true);
-            const btnStatus = document.querySelector('#btn_status');
-            btnStatus.textContent = 'Changing button...';
-
-            DemoApp.apiRequest('changeMenuButton', {}, function(result) {
-                document.querySelectorAll('button').forEach((btn) => btn.disabled = false);
-
-                if (result.response) {
-                    if (result.response.ok) {
-                        btnStatus.textContent = 'Button changed!';
-                        btnStatus.className = 'ok';
-                        btnStatus.style.display = 'block';
-                        Telegram.WebApp.close();
-                    } else {
-                        btnStatus.textContent = result.response.description;
-                        btnStatus.className = 'err';
-                        btnStatus.style.display = 'block';
-                        alert(result.response.description);
-                    }
-                } else if (result.error) {
-                    btnStatus.textContent = result.error;
-                    btnStatus.className = 'err';
-                    btnStatus.style.display = 'block';
-                    alert(result.error);
-                } else {
-                    btnStatus.textContent = 'Unknown error';
-                    btnStatus.className = 'err';
-                    btnStatus.style.display = 'block';
-                    alert('Unknown error');
-                }
-            });
-            if (close) {
-                setTimeout(function() {
-                    Telegram.WebApp.close();
-                }, 50);
-            }
-        },
+        
         checkInitData() {
             const webViewStatus = document.querySelector('#webview_data_status');
             if (DemoApp.initDataUnsafe.query_id &&
@@ -428,13 +391,7 @@
         }
     }
 
-    const DemoAppMenu = {
-        init() {
-            DemoApp.init();
-            document.body.classList.add('gray');
-            Telegram.WebApp.setHeaderColor('secondary_bg_color');
-        }
-    };
+    
 
     const DemoAppInitData = {
         init() {
@@ -474,9 +431,7 @@
         document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
     });
 
-    if (DemoApp.initDataUnsafe.query_id) {
-        document.getElementById('main_btn').style.display = 'block';
-    }
+    
     document.getElementById('with_webview_btn').style.display = !!DemoApp.initDataUnsafe.query_id && !DemoApp.initDataUnsafe.receiver ? 'block' : 'none';
     document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
 
@@ -486,23 +441,7 @@
     document.getElementById('ver').innerHTML = Telegram.WebApp.version;
     document.getElementById('platform').innerHTML = Telegram.WebApp.platform;
 
-    if (DemoApp.initDataUnsafe.receiver) {
-        document.getElementById('peer_wrap').style.display = 'block';
-        document.getElementById('peer_name').innerHTML = DemoApp.initDataUnsafe.receiver.first_name + ' ' + DemoApp.initDataUnsafe.receiver.last_name;
-        if (DemoApp.initDataUnsafe.receiver.photo_url) {
-            document.getElementById('peer_photo').setAttribute('src', DemoApp.initDataUnsafe.receiver.photo_url);
-        } else {
-            document.getElementById('peer_photo').style.display = 'none';
-        }
-    } else if (DemoApp.initDataUnsafe.chat) {
-        document.getElementById('peer_wrap').style.display = 'block';
-        document.getElementById('peer_name').innerHTML = DemoApp.initDataUnsafe.chat.title;
-        if (DemoApp.initDataUnsafe.chat.photo_url) {
-            document.getElementById('peer_photo').setAttribute('src', DemoApp.initDataUnsafe.chat.photo_url);
-        } else {
-            document.getElementById('peer_photo').style.display = 'none';
-        }
-    }
+    
 
     DemoApp.checkInitData();
     DemoApp.init();
@@ -529,7 +468,7 @@
         document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
     });
 
-    DemoApp.testClipboard(document.getElementById('clipboard_test'));
+    
 </script>
 
 </body>
