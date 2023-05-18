@@ -290,11 +290,11 @@
     </style>
 </head>
 
-<body> <div class="" style="visibility: hidden;">
+<body class="" style="visibility: hidden;">
 
 
 <section>
-    
+    <div class="hint">
     
     <pre><code id="webview_data"></code></pre>
     <div class="hint">
@@ -324,7 +324,7 @@
     const DemoApp = {
         initData: Telegram.WebApp.initData || '',
         initDataUnsafe: Telegram.WebApp.initDataUnsafe || {},
-        MainButton: Telegram.WebApp.MainButton,
+        
 
         init(options) {
             document.body.style.visibility = '';
@@ -334,9 +334,7 @@
                 is_visible: true
             }).onClick(DemoApp.close);
         },
-        expand() {
-            Telegram.WebApp.expand();
-        },
+        
         close() {
             Telegram.WebApp.close();
         },
@@ -432,11 +430,8 @@
     });
 
     
-    document.getElementById('with_webview_btn').style.display = !!DemoApp.initDataUnsafe.query_id && !DemoApp.initDataUnsafe.receiver ? 'block' : 'none';
-    document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
-
-    document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
     
+    document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
 
     document.getElementById('ver').innerHTML = Telegram.WebApp.version;
     document.getElementById('platform').innerHTML = Telegram.WebApp.platform;
@@ -453,7 +448,7 @@
             .setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportStableHeight, 2) +
                 ' | is_expanded: ' + (Telegram.WebApp.isExpanded ? 'true' : 'false'));
     }
-    Telegram.WebApp.setHeaderColor('secondary_bg_color');
+    
     Telegram.WebApp.onEvent('viewportChanged', setViewportData);
     setViewportData();
     Telegram.WebApp.onEvent('settingsButtonClicked', function() {
