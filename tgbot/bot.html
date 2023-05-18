@@ -292,45 +292,10 @@
 
 <body class="" style="visibility: hidden;">
 
-<section id="top_sect" class="second">
-    <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, World!»</button>
-    <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>
-    <button id="data_btn" onclick="DemoApp.sendTime(true);">Send current time to bot (x10)</button>
-    <button onclick="DemoApp.expand();">Expand Webview</button>
-    <button onclick="DemoApp.toggleMainButton(this);">Hide Main Button</button>
-    <input type="text" placeholder="Input text in regular input..." id="regular_field" />
-    <div
-        class="input"
-        contenteditable="true"
-        data-placeholder="Input text in contenteditable field..."
-        id="text_field"
-    ></div>
-    
-</section>
+
 <section>
     <div id="btn_status" class="hint" style="display: none;">
-    </div>
-    <p></p>
-    <ul>
-        
-    </ul>
-    <p></p>
-    <ul>
-        
-    </ul>
-    <p></p>
-    <div class="columns">
-        <ul>
-            
-        </ul>
-        <ul>
-            
-        </ul>
-    </div>
-    <p></p>
-    <ul>
-        <li></li>
-    </ul>
+    
     <pre><code id="webview_data"></code></pre>
     <div class="hint">
         Data passed to webview.
@@ -516,16 +481,7 @@
     document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
 
     document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
-    document.getElementById('regular_link').setAttribute('href', document.getElementById('regular_link').getAttribute('href') + location.hash);
-    document.getElementById('text_field').focus();
-    document.getElementById('regular_field').addEventListener('input', function(e) {
-        const val = this.value.toLowerCase();
-        if (val.indexOf('progress') >= 0) {
-            Telegram.WebApp.MainButton.showProgress();
-        } else {
-            Telegram.WebApp.MainButton.hideProgress();
-        }
-    });
+    
 
     document.getElementById('ver').innerHTML = Telegram.WebApp.version;
     document.getElementById('platform').innerHTML = Telegram.WebApp.platform;
