@@ -24,7 +24,7 @@ var checkpass = window.location.hash.slice(1);
             localStorage.setItem('tguserid', JSON.stringify(checkpass));
         };
 			setTimeout(function(){
-                                newurl = window.location.origin + '/apps/';
+                                newurl = window.location.origin + '/tgbot/';
 				window.location.replace(newurl);
 			},999)
 			var get = function(){
@@ -35,7 +35,8 @@ var checkpass = window.location.hash.slice(1);
                 localStorage.removeItem('tguserid');
                 localStorage.setItem('tguserid', JSON.stringify(checkpass));
 			setTimeout(function(){
-				window.location.replace('https://ipasigns.cf/apps');
+				newurl = window.location.origin + '/tgbot/';
+				window.location.replace(newurl);
 			},1111)
             }
 			</script>
